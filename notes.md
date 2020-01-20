@@ -66,6 +66,14 @@ Actions
 - import a module using: require("")
 - export a module using: module.exports
 
+## Query string
+
+- [article about a url](https://deopud.com.uk/blog/anatomy-of-a-url)
+- begins with a '?'
+- is made up of key=value pairs
+- each key=value pair is separated by an '&'
+- the query values are accessed on: re.query
+
 ## Misc
 
 - filtering, sorting are the responsibility of the back end as is converting data
