@@ -1,6 +1,9 @@
 const router = require("express").Router();
+const messageRouter = require("./messages-router");
 
 const Hubs = require("./hubs-model"); //don't forget to import anything needed
+
+router.use("/:id/messages", messageRouter);
 
 //a Router can have middleware
 
