@@ -17,13 +17,16 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:messageId", (req, res) => {
+  console.log(req.params.id);
+  console.log(req.params.messageId);
+  console.log();
   hubs
-    .findMessageById(req.params.id, req.params.messageId)
+    .findHubMessageByID(req.params.id, req.params.messageId)
     .then(hub => {
       if (hub) {
         res.status(200).json(hub);
       } else {
-        res.status(404).json({ message: "Hub not found" });
+        res.status(404).json({ message: "Message not found" });
       }
     })
     .catch(error => {
