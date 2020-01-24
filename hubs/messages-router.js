@@ -16,9 +16,9 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:messageId", (req, res) => {
   hubs
-    .findById(req.params.id)
+    .findMessageById(req.params.id, req.params.messageId)
     .then(hub => {
       if (hub) {
         res.status(200).json(hub);
@@ -28,9 +28,8 @@ router.get("/:id", (req, res) => {
     })
     .catch(error => {
       // log error to database
-      console.log(error);
       res.status(500).json({
-        message: "Error retrieving the hub"
+        message: "Could not get hubs message"
       });
     });
 });
